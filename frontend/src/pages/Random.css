@@ -1,0 +1,77 @@
+.random-page {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.random-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.random-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.random-header p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+}
+
+.random-action {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.random-result {
+  text-align: center;
+}
+
+.random-result h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+}
+
+.random-game-container {
+  max-width: 500px;
+  margin: 0 auto 2rem;
+}
+
+.random-placeholder {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: var(--bg-secondary);
+  border-radius: 12px;
+  border: 2px dashed var(--border-color);
+}
+
+.placeholder-icon {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.random-placeholder p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .random-header h1 {
+    font-size: 2rem;
+  }
+
+  .random-header p {
+    font-size: 1rem;
+  }
+
+  .random-result h2 {
+    font-size: 1.5rem;
+  }
+
+  .placeholder-icon {
+    font-size: 4rem;
+  }
+}

@@ -1,0 +1,108 @@
+.error-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  padding: 2rem;
+}
+
+.error-content {
+  text-align: center;
+  max-width: 600px;
+}
+
+.error-animation {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.error-code {
+  font-size: 8rem;
+  font-weight: 900;
+  color: var(--primary-color);
+  opacity: 0.2;
+  line-height: 1;
+  margin-bottom: -4rem;
+}
+
+.error-gamepad {
+  font-size: 6rem;
+  position: relative;
+  z-index: 1;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.error-content h1 {
+  font-size: 2.5rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.error-message {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+  line-height: 1.6;
+}
+
+.error-suggestions {
+  margin-top: 3rem;
+}
+
+.error-suggestions h2 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.error-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.error-links .btn {
+  min-width: 150px;
+}
+
+@media (max-width: 768px) {
+  .error-code {
+    font-size: 5rem;
+    margin-bottom: -2.5rem;
+  }
+
+  .error-gamepad {
+    font-size: 4rem;
+  }
+
+  .error-content h1 {
+    font-size: 2rem;
+  }
+
+  .error-message {
+    font-size: 1rem;
+  }
+
+  .error-suggestions h2 {
+    font-size: 1.2rem;
+  }
+
+  .error-links {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .error-links .btn {
+    width: 100%;
+  }
+}
