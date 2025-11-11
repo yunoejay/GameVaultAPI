@@ -35,6 +35,11 @@ const Navbar = () => {
               Library
             </Link>
           </li>
+          <li className="navbar-item">
+            <Link to="/add" className={`navbar-link ${isActive('/add')}`}>
+              Add
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>

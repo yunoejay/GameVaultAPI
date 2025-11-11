@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Random from './pages/Random';
 import Search from './pages/Search';
 import Library from './pages/Library';
+import AddGame from './pages/AddGame';
 import ErrorPage from './pages/ErrorPage';
 import './App.css';
 
@@ -18,6 +19,7 @@ function App() {
             <Route path="/random" element={<Random />} />
             <Route path="/search" element={<Search />} />
             <Route path="/library" element={<Library />} />
+            <Route path="/add" element={<AddGame />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
         </main>

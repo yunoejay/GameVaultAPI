@@ -1,6 +1,10 @@
 import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import axios from 'axios';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { UserGame } from './user-game.entity';
+import { CreateGameDto } from './dto/create-game.dto';
 
 @Injectable()
 export class GamesService {
@@ -10,8 +14,10 @@ export class GamesService {
   private readonly CACHE_DURATION = 24 * 60 * 60 * 1000;
   private usingFallback: boolean = false;
 
-  constructor(private configService: ConfigService) {
-  }
+  constructor(
+    private configService: ConfigService,
+    @InjectRepository(UserGame) private readonly repo: Repository<UserGame>,
+  ) {}
 
   async getAllGames(limit: number = 10) {
     try {
@@ -148,5 +154,24 @@ export class GamesService {
         HttpStatus.NOT_FOUND,
       );
     }
+  }
+
+  async createUserGame(dto: CreateGameDto): Promise<UserGame> {
+    const game = this.repo.create({
+      title: dto.title,
+      genre: dto.genre,
+      platform: dto.platform,
+      year: dto.year ?? null,
+      description: dto.description,
+      image: dto.image,
+      gameUrl: dto.gameUrl,
+      developer: dto.developer,
+      publisher: dto.publisher,
+    });
+    return await this.repo.save(game);
+  }
+
+  async getUserGames(): Promise<UserGame[]> {
+    return await this.repo.find({ order: { id: 'DESC' } });
   }
 }
